@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Docker') {
+            steps {
+                sh 'docker image ls'
+            }
+        }
+        stage('Docker run') {
+            steps {
+                sh 'docker run -it -d ubuntu'
+            }
+        }
+         stage('Docker PS') {
+            steps {
+                sh 'docker ps'
+            }
+        }
+         stage('Docker redis') {
+            steps {
+                sh 'docker pull redis'
+            }
+        }
+         stage('Docker image list') {
+            steps {
+                sh 'docker images'
+            }
+        }
+         stage('Docker run redis') {
+            steps {
+                sh 'docker run -it -d redis'
+            }
+        }
+         stage('Docker mongo') {
+            steps {
+                sh 'docker pull mongo'
+            }
+        }
+    }
+}

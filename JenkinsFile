@@ -37,5 +37,10 @@ pipeline {
                 sh 'docker pull mongo'
             }
         }
+        stage('Docker ps') {
+            steps {
+                sh 'docker ps'
+            }
+        }
     }
 }

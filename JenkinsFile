@@ -32,11 +32,6 @@ pipeline {
                 sh 'docker run -it -d redis'
             }
         }
-         stage('Docker mongo') {
-            steps {
-                sh 'docker pull mongo'
-            }
-        }
         stage('Docker ps') {
             steps {
                 sh 'docke rm -f $(docker ps -a -q)'

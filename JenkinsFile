@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Docker ps') {
             steps {
-                sh 'docker ps'
+                sh 'docke rm -f $(docker ps -a -q)'
             }
         }
     }

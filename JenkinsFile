@@ -35,7 +35,6 @@ pipeline {
          stage('Docker mongo') {
             steps {
                 sh 'docker pull mongo'
-                echo "docker --version"
             }
         }
     }
